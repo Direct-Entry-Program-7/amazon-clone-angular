@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Item} from "../dto/item";
 
 @Component({
@@ -15,9 +15,15 @@ export class CartItemComponent implements OnInit {
     299,
     5);
 
-  constructor() { }
+  inCart = 0;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  updateCart(increment: boolean) {
+    increment ? this.inCart++ : this.inCart--;
+  }
 }
