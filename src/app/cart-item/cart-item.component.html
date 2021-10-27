@@ -8,7 +8,7 @@
     <div *ngSwitchCase="2">⭐⭐</div>
     <div *ngSwitchCase="1">⭐</div>
   </ng-container>
-  <div class="item-price">{{item.price}}</div>
+  <div class="item-price">{{item.price | currency:'USD'}}</div>
   <div class="item-stock">In Stock: <span>{{item.qty - inCart}}</span></div>
   Add to Cart
   <div class="input-group mb-3 add-to-cart-ctrl">
