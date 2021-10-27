@@ -9,11 +9,11 @@
     <div *ngSwitchCase="1">⭐</div>
   </ng-container>
   <div class="item-price">{{item.price}}</div>
-  <div class="item-stock">In Stock: <span>{{item.qty}}</span></div>
+  <div class="item-stock">In Stock: <span>{{item.qty - inCart}}</span></div>
   Add to Cart
   <div class="input-group mb-3 add-to-cart-ctrl">
-    <button class="btn btn-outline-secondary" type="button" (click)="updateCart(false)">-</button>
+    <button [disabled]="inCart === 0" class="btn btn-outline-secondary" type="button" (click)="updateCart(false)">-</button>
     <input type="text" class="form-control" [(ngModel)]="inCart">
-    <button class="btn btn-outline-secondary" type="button" (click)="updateCart(true)">+</button>
+    <button [disabled]="inCart === item.qty" class="btn btn-outline-secondary" type="button" (click)="updateCart(true)">+</button>
   </div>
 </div>
