@@ -9,7 +9,8 @@
     <div *ngSwitchCase="1">⭐</div>
   </ng-container>
   <div class="item-price">{{item.price | currency:'USD'}}</div>
-  <div class="item-stock">In Stock: <span>{{item.qty - inCart}}</span></div>
+  <div *ngIf="inCart !== item.qty" class="item-stock">In Stock: <span>{{item.qty - inCart}}</span></div>
+  <div *ngIf="inCart === item.qty" class="out-of-stock">Out of Stock</div>
   Add to Cart
   <div class="input-group mb-3 add-to-cart-ctrl">
     <button [disabled]="inCart === 0" class="btn btn-outline-secondary" type="button" (click)="updateCart(false)">-</button>
