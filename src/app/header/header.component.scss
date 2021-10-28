@@ -1,4 +1,14 @@
 header{
-  height: 50px;
-  background-color: yellow;
+  height: 60px;
+  background-color: #232f3e;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+  .logo{
+    background-image: url('../../assets/images/amazon-icons.png');
+    background-position: -10px -51px;
+    width: 97px;
+    height: 30px;
+  }
 }
