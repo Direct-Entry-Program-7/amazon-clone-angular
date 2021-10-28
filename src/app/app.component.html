@@ -1,10 +1,4 @@
 <app-header></app-header>
 <main>
-  <app-cart-item></app-cart-item>
-  <app-cart-item></app-cart-item>
-  <app-cart-item></app-cart-item>
-  <app-cart-item></app-cart-item>
-  <app-cart-item></app-cart-item>
-  <app-cart-item></app-cart-item>
-  <app-cart-item></app-cart-item>
+  <app-cart-item *ngFor="let it of items" [item]="it"></app-cart-item>
 </main>

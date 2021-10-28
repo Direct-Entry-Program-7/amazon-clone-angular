@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {DUMMY_DATA} from "./dummy-data";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'amazon-clone';
+  items = DUMMY_DATA;
 }

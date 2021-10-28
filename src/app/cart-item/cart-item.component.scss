@@ -11,10 +11,13 @@
 
   .item-image{
     height: 320px;
+    width: 250px;
+    object-fit: contain;
   }
 
   .item-description{
     margin-top: 10px;
+    text-align: center;
   }
 
   .item-price{
