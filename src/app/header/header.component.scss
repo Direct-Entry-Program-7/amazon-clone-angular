@@ -42,14 +42,6 @@ header{
       border: 1px solid white;
     }
 
-    span{
-      position: absolute;
-      left: 22px;
-      top: 5px;
-      font-weight: bold;
-      color: #f08804;
-    }
-
     small{
       padding: 0 10px;
       font-weight: bold;
@@ -60,6 +52,15 @@ header{
       background-position: -10px -340px;
       width: 38px;
       height: 26px;
+      text-align: center;
+
+      span{
+        position: relative;
+        top: -10px;
+        left: 3px;
+        font-weight: bold;
+        color: #f08804;
+      }
     }
   }
 }

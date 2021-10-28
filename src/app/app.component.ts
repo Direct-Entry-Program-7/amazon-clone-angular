@@ -8,4 +8,8 @@ import {DUMMY_DATA} from "./dummy-data";
 })
 export class AppComponent {
   items = DUMMY_DATA;
+
+  updateCart(inCart: number) {
+    console.log(inCart);
+  }
 }
