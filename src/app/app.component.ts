@@ -17,9 +17,19 @@ export class AppComponent {
 
     if (item){
       item.qty = inCart;
+
+      if (item.qty === 0){
+        this.cartItems.splice(this.cartItems.indexOf(item), 1);
+      }
     }else{
       this.cartItems.push({code: it.code, qty: inCart});
     }
-    console.log(this.cartItems);
+  }
+
+  getTotalItemsInCart(): number{
+    let totalItems = 0;
+
+    this.cartItems.forEach(item => totalItems += item.qty);
+    return totalItems;
   }
 }
