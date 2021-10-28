@@ -2,6 +2,7 @@ header{
   height: 60px;
   background-color: #232f3e;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 10px;
 
@@ -24,5 +25,41 @@ header{
     background-position: -10px -51px;
     width: 97px;
     height: 30px;
+  }
+
+  .cart-container{
+    position: relative;
+    color: white;
+    display: flex;
+    height: 55px;
+    padding: 10px;
+    align-items: flex-end;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid transparent;
+
+    &:hover{
+      border: 1px solid white;
+    }
+
+    span{
+      position: absolute;
+      left: 22px;
+      top: 5px;
+      font-weight: bold;
+      color: #f08804;
+    }
+
+    small{
+      padding: 0 10px;
+      font-weight: bold;
+    }
+
+    .cart-icon{
+      background-image: url('../../assets/images/amazon-icons.png');
+      background-position: -10px -340px;
+      width: 38px;
+      height: 26px;
+    }
   }
 }
