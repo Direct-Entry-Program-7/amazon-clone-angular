@@ -7,10 +7,11 @@ import {Subject} from "rxjs";
 })
 export class CartService {
 
-  cartItems: Array<{code: string, qty: number}> = [];
-  totalItems = new Subject<number>();
+  private cartItems: Array<{code: string, qty: number}> = [];
+  private totalItems = new Subject<number>();
 
-  constructor() { }
+  constructor() {
+  }
 
   updateCart(it: Item, toCart: number) {
 
@@ -25,14 +26,19 @@ export class CartService {
     }else{
       this.cartItems.push({code: it.code, qty: toCart});
     }
+    this.calculateTotalItems();
+  }
+
+  private calculateTotalItems(){
+    let totalItems = 0;
+
+    this.cartItems.forEach(item => totalItems += item.qty);
+    this.totalItems.next(totalItems);
   }
 
   getTotalItemsInCart(): Subject<number>{
     return this.totalItems;
-    // let totalItems = 0;
-    //
-    // this.cartItems.forEach(item => totalItems += item.qty);
-    // return totalItems;
+
   }
 }
 

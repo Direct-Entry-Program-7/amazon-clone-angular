@@ -13,11 +13,10 @@ export class HeaderComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-
+    this.onCartChange();
   }
 
-  updateCart() {
-    console.log("Updating Cart...!")
-    this.totalItemsInCart = this.cartService.getTotalItemsInCart();
+  onCartChange() {
+    this.cartService.getTotalItemsInCart().subscribe(value =>  this.totalItemsInCart = value);
   }
 }
