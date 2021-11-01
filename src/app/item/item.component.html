@@ -1,1 +1,60 @@
-<p>item works!</p>
+<div class="item-container">
+  <img class="item-image" src="https://m.media-amazon.com/images/I/81tjLksKixL._AC_SX679_.jpg" alt="product image">
+  <div>
+    <h2 class="item-title">Seagate Portable 2TB External Hard Drive Portable HDD – USB 3.0 for PC, Mac, PS4, & Xbox -
+      1-Year Rescue Service (STGX2000400)</h2>
+    <div class="item-rating" [ngSwitch]="4">
+      <div *ngSwitchCase="5">⭐⭐⭐⭐⭐</div>
+      <div *ngSwitchCase="4">⭐⭐⭐⭐</div>
+      <div *ngSwitchCase="3">⭐⭐⭐</div>
+      <div *ngSwitchCase="2">⭐⭐</div>
+      <div *ngSwitchCase="1">⭐</div>
+    </div>
+    <div class="item-price">Price: <span>$299.00</span></div>
+    <div  class="item-stock">In Stock: <span>10</span></div>
+    <div *ngIf="false" class="out-of-stock">Out of Stock</div>
+    Add to Cart
+    <div class="input-group mb-3 add-to-cart-ctrl">
+      <button class="btn btn-outline-secondary" type="button">-</button>
+      <input type="text" class="form-control" [disabled]="true" value="5">
+      <button class="btn btn-outline-secondary" type="button">+</button>
+    </div>
+  </div>
+</div>
+<div class="item-description">
+  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur cum dolorem doloremque excepturi
+    expedita ipsum iure nihil nostrum optio quas quibusdam quidem quis, ratione repellat sed ut veritatis voluptatibus.
+  </div>
+  <div>Assumenda deserunt facere fuga inventore ipsum iusto laborum minima modi molestias numquam officiis perspiciatis
+    quaerat quibusdam rerum unde, veniam voluptate? Beatae consequatur delectus dicta eligendi enim eveniet
+    exercitationem fugit quam!
+  </div>
+  <div>At consectetur consequuntur cumque doloremque enim et facere, fugiat molestias nemo nihil, odit rerum similique
+    tenetur voluptate voluptatem! Adipisci commodi, cupiditate doloremque expedita impedit iure labore odit quo sunt
+    tempora?
+  </div>
+  <div>Distinctio eveniet maiores minus modi quas recusandae unde veniam voluptatum! Accusantium ad culpa dignissimos
+    excepturi impedit maiores necessitatibus nesciunt nobis, quasi quibusdam quis rerum saepe soluta ut, velit veritatis
+    vitae.
+  </div>
+  <div>Cum dolor itaque iure minima modi saepe voluptas voluptatum. Aperiam assumenda autem delectus, eius eveniet
+    expedita fuga, fugit hic ipsa ipsam ipsum laborum modi nesciunt sint, voluptas! Explicabo nihil, quis!
+  </div>
+  <div>Accusamus aspernatur autem consequuntur distinctio, doloremque ipsa itaque magnam nisi nobis numquam officiis
+    perferendis placeat quasi quibusdam quos reprehenderit voluptas voluptatem. Delectus deserunt dolor exercitationem
+    laborum nihil omnis quo soluta.
+  </div>
+  <div>Cumque dolorum iste iure labore nihil nobis possimus quia suscipit unde! Culpa distinctio, eum ex exercitationem,
+    iusto officiis porro possimus quibusdam, rem sunt temporibus unde. Nisi odit quasi quisquam voluptatibus!
+  </div>
+  <div>Facere minus porro suscipit tempora ullam. Ab alias aliquam amet at aut, autem cupiditate debitis ea eius
+    expedita iusto porro, quaerat quia reiciendis tempora! Aliquam deleniti dicta et quam vitae!
+  </div>
+  <div>Accusamus amet aspernatur atque blanditiis debitis dignissimos, distinctio ea eum eveniet exercitationem fuga in
+    maiores mollitia natus nesciunt pariatur porro quam ratione sapiente sint sit sunt tempore tenetur vel voluptate!
+  </div>
+  <div>Adipisci aliquid aspernatur dicta eos esse est expedita incidunt maiores maxime natus necessitatibus nobis
+    numquam perspiciatis quidem quisquam quo reiciendis, soluta velit. Architecto blanditiis dolorem ipsum labore quasi
+    voluptas voluptatibus?
+  </div>
+</div>
