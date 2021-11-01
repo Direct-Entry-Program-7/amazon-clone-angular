@@ -12,7 +12,7 @@ import {DUMMY_DATA} from "../dummy-data";
 })
 export class ItemComponent implements OnInit {
 
-  item: Item = DUMMY_DATA[0];
+  item: Item = DUMMY_DATA[2];
 
   constructor(private cartService: CartService,
               private itemService: ItemService,
