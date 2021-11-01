@@ -3,12 +3,13 @@
     <app-cart-row (click)="navigateToItem(ci.code)" *ngFor="let ci of cartItems" [qty]="ci.qty"
                   [item]="getItem(ci.code)" (onRemove)="loadAllCartItems()"></app-cart-row>
   </div>
-  <div>
-    container2
+  <div class="checkout-container">
+    <h2>Net Total: {{25|currency:'USD'}}</h2>
+    <button>Checkout</button>
   </div>
 </div>
 <div class="empty-cart" *ngIf="cartItems.length === 0">
   <div class="cart-icon"></div>
-  <h1>Please add items to cart</h1>
+  <h1>Cart is empty. Please add items to cart first.</h1>
   <div><a href="" routerLink="/home">Go to Product Listing</a></div>
 </div>
