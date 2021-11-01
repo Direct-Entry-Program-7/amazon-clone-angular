@@ -39,6 +39,12 @@ export class CartService {
   getTotalItemsInCart(): Subject<number>{
     return this.totalItems;
   }
+
+  getQtyInCart(code: string): number{
+    const item = this.cartItems.find(i => i.code === code);
+
+    return item? item.qty: 0;
+  }
 }
 
 

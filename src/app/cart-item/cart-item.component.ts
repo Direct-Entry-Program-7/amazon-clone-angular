@@ -20,6 +20,11 @@ export class CartItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadInCartQty();
+  }
+
+  loadInCartQty(){
+    this.inCart = this.cartService.getQtyInCart(this.item.code);
   }
 
   updateCart(increment: boolean) {
