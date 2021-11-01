@@ -20,6 +20,5 @@
     </div>
   </div>
 </div>
-<div class="item-description">
-  {{item.description??'No description'}}
+<div class="item-description" [innerHTML]="item.description??'No description'">
 </div>

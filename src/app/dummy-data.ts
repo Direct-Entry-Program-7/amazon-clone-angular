@@ -6,7 +6,17 @@ export const DUMMY_DATA: Array<Item> = [
     "Apple AirPods with Charging Case",
     3,
     299,
-    5, "Something here"),
+    5,
+    `<div>Lorem ipsum dolor <b>sit</b> amet, consectetur adipisicing elit. Aliquid asperiores assumenda eligendi ex exercitationem
+    facilis, fugiat iste laborum libero molestias nemo nostrum numquam officia optio placeat possimus sed sunt ut.
+  </div>
+  <div>Ad alias commodi consequuntur deserunt dicta est eveniet excepturi fuga fugit illo illum minus molestias
+    mollitia, nam necessitatibus nesciunt nostrum odio odit officiis porro provident quam quas reiciendis sint ut.
+  </div>
+  <div>Consequatur dignissimos necessitatibus optio temporibus voluptatem? Dolor maiores neque perferendis praesentium
+    soluta! Aspernatur dicta dolor incidunt minima molestias, nihil pariatur perferendis porro possimus praesentium
+    provident quasi sit! Dolore placeat, repudiandae?
+  </div>`),
   new Item("I002",
     "https://m.media-amazon.com/images/I/81Sxdp0JBLL._AC_UL320_.jpg",
     "Nintendo Switch - Animal Crossing: New Horizons Edition - Switch",
