@@ -2,3 +2,10 @@
   display: grid;
   grid-template-columns: 3fr 1fr;
 }
+
+.cart-items-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
