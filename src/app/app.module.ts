@@ -11,6 +11,7 @@ import {CartComponent} from './cart/cart.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {RouterModule} from "@angular/router";
 import {CartService} from "./service/cart.service";
+import { CartRowComponent } from './cart-row/cart-row.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {CartService} from "./service/cart.service";
     CartItemComponent,
     ItemComponent,
     HomeComponent,
-    CartComponent
+    CartComponent,
+    CartRowComponent
   ],
   imports: [
     BrowserModule,
