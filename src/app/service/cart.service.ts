@@ -24,4 +24,13 @@ export class CartService {
       this.cartItems.push({code: it.code, qty: toCart});
     }
   }
+
+  getTotalItemsInCart(): number{
+    let totalItems = 0;
+
+    this.cartItems.forEach(item => totalItems += item.qty);
+    return totalItems;
+  }
 }
+
+
