@@ -23,13 +23,19 @@
   padding: 10px;
 }
 
+.shrink{
+  flex-shrink: 0;
+}
+
 .item-qty{
   font-weight: bold;
   width: 50px;
+  @extend .shrink;
 }
 
 .item-unit-price{
   width: 100px;
+  @extend .shrink;
 }
 
 .item-total-price{
@@ -37,10 +43,12 @@
   font-weight: bold;
   width: 100px;
   color: #232f3e;
+  @extend .shrink;
 }
 
 .remove{
   width: 60px;
   font-size: 1.5rem;
   padding: 10px;
+  @extend .shrink;
 }
