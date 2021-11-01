@@ -13,9 +13,7 @@ export class HeaderComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    setInterval(()=> {
-      this.updateCart();
-    }, 1000);
+
   }
 
   updateCart() {
