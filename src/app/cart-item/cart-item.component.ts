@@ -12,9 +12,6 @@ export class CartItemComponent implements OnInit {
 
   @Input()
   item!: Item;
-  @Output()
-  cartOnChange = new EventEmitter<number>();
-
   inCart = 0;
 
   constructor(private cartService: CartService,
@@ -26,6 +23,6 @@ export class CartItemComponent implements OnInit {
 
   updateCart(increment: boolean) {
     increment ? this.inCart++ : this.inCart--;
-    this.cartOnChange.emit(this.inCart);
+    this.cartService.updateCart(this.item, this.inCart);
   }
 }
