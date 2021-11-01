@@ -38,7 +38,6 @@ export class CartService {
 
   getTotalItemsInCart(): Subject<number>{
     return this.totalItems;
-
   }
 }
 
