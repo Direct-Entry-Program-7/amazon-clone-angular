@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Item} from "../dto/item";
 import {DUMMY_DATA} from "../dummy-data";
+import {CartService} from "../service/cart.service";
 
 @Component({
   selector: 'app-cart-row',
@@ -13,10 +14,16 @@ export class CartRowComponent implements OnInit {
   item!: Item;
   @Input()
   qty!: number;
+  @Output()
+  onRemove = new EventEmitter<void>();
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
   }
 
+  removeFromCart() {
+    this.cartService.removeItemFromCart(this.item.code);
+    this.onRemove.emit();
+  }
 }

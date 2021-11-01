@@ -49,6 +49,10 @@ export class CartService {
   getAllCartItems(): Array<{code: string, qty: number}>{
     return this.cartItems;
   }
+
+  removeItemFromCart(code: string): void{
+    this.cartItems = this.cartItems.filter(item => item.code !== code);
+  }
 }
 
 

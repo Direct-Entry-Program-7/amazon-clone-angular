@@ -1,5 +1,5 @@
 <div class="cart-items-container">
-  <app-cart-row *ngFor="let ci of cartItems" [qty]="ci.qty"  [item]="getItem(ci.code)"></app-cart-row>
+  <app-cart-row *ngFor="let ci of cartItems" [qty]="ci.qty"  [item]="getItem(ci.code)" (onRemove)="loadAllCartItems()"></app-cart-row>
 </div>
 <div>
   container2
