@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import {FormsModule} from "@angular/forms";
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CartItemComponent
+    CartItemComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
