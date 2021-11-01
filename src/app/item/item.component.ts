@@ -13,6 +13,7 @@ import {DUMMY_DATA} from "../dummy-data";
 export class ItemComponent implements OnInit {
 
   item!: Item;
+  inCart = 0;
 
   constructor(private cartService: CartService,
               private itemService: ItemService,
@@ -37,6 +38,11 @@ export class ItemComponent implements OnInit {
     }else{
       this.router.navigateByUrl('/home');
     }
+  }
+
+  updateCart(increment: boolean) {
+    increment ? this.inCart++ : this.inCart--;
+    this.cartService.updateCart(this.item, this.inCart);
   }
 
 }
