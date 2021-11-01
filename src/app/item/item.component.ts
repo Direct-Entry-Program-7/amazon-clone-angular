@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {CartService} from "../service/cart.service";
 import {ItemService} from "../service/item.service";
 import {ActivatedRoute} from "@angular/router";
+import {Item} from "../dto/item";
+import {DUMMY_DATA} from "../dummy-data";
 
 @Component({
   selector: 'app-item',
@@ -9,6 +11,8 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
+
+  item: Item = DUMMY_DATA[0];
 
   constructor(private cartService: CartService,
               private itemService: ItemService,

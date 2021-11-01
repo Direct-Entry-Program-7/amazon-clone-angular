@@ -1,8 +1,7 @@
 <div class="item-container">
-  <img class="item-image" src="https://m.media-amazon.com/images/I/81tjLksKixL._AC_SX679_.jpg" alt="product image">
+  <img class="item-image" src="{{item.image}}" alt="product image">
   <div>
-    <h2 class="item-title">Seagate Portable 2TB External Hard Drive Portable HDD – USB 3.0 for PC, Mac, PS4, & Xbox -
-      1-Year Rescue Service (STGX2000400)</h2>
+    <h2 class="item-title">{{item.description}}</h2>
     <div class="item-rating" [ngSwitch]="4">
       <div *ngSwitchCase="5">⭐⭐⭐⭐⭐</div>
       <div *ngSwitchCase="4">⭐⭐⭐⭐</div>
