@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Item} from "../dto/item";
 import {DUMMY_DATA} from "../dummy-data";
 
@@ -9,7 +9,10 @@ import {DUMMY_DATA} from "../dummy-data";
 })
 export class CartRowComponent implements OnInit {
 
-  item: Item = DUMMY_DATA[0];
+  @Input()
+  item!: Item;
+  @Input()
+  qty!: number;
 
   constructor() { }
 
