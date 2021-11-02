@@ -29,18 +29,15 @@ export class ItemComponent implements OnInit {
     this.inCart = this.cartService.getQtyInCart(this.item.code);
   }
 
-
   loadItem(){
     const itemCode = this.activeRoute.snapshot.paramMap.get('code');
 
     if (itemCode){
-      const item = this.itemService.getItem(itemCode);
-
-      if (!item){
-        this.router.navigateByUrl('/home');
-      }else{
+      this.itemService.getItem(itemCode).subscribe(item => {
         this.item = item;
-      }
+      }, error => {
+        this.router.navigateByUrl('/home');
+      })
     }else{
       this.router.navigateByUrl('/home');
     }
