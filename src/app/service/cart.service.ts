@@ -16,7 +16,7 @@ export class CartService {
 
   updateCart(it: Item, toCart: number) {
 
-    const item = this.cartItems.find(i => i.item === it);
+    const item = this.cartItems.find(i => i.item.code === it.code);
 
     if (item){
       item.qty = toCart;

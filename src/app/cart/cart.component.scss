@@ -1,6 +1,10 @@
 .cart {
   display: grid;
   grid-template-columns: 3fr 1fr;
+
+  @media all and (max-width: 1250px){
+    display: block;
+  }
 }
 
 .cart-items-container {
@@ -20,6 +24,7 @@
   background-color: lightgray;
 
   h1 {
+    text-align: center;
     padding: 20px 10px;
   }
 }
@@ -45,8 +50,6 @@
   align-items: center;
   gap: 10px;
   height: fit-content;
-  position: fixed;
-  right: 0px;
 
   h1 {
     text-align: center;
