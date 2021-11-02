@@ -11,7 +11,7 @@ export class CartService {
   private cartItems: Array<{item: Item, qty: number}> = [];
   private totalItems = new Subject<number>();
 
-  constructor(private itemService: ItemService) {
+  constructor() {
   }
 
   updateCart(it: Item, toCart: number) {
