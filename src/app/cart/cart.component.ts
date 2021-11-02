@@ -3,6 +3,7 @@ import {CartService} from "../service/cart.service";
 import {ItemService} from "../service/item.service";
 import {Item} from "../dto/item";
 import {Router} from "@angular/router";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-cart',
@@ -27,8 +28,8 @@ export class CartComponent implements OnInit {
     this.cartItems =  this.cartService.getAllCartItems();
   }
 
-  getItem(code: string): Item {
-    return this.itemService.getItem(code) as Item;
+  getItem(code: string): Observable<Item> {
+    return this.itemService.getItem(code);
   }
 
   navigateToItem(code: string) {

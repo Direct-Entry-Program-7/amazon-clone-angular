@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   loadAllItems(){
-    this.itemService.getAllItems().subscribe(values=> this.items = values,
+    this.itemService.getAllItems().subscribe(values=> {this.items = values; console.log(this.items)},
       error=> console.error(error));
   }
 
