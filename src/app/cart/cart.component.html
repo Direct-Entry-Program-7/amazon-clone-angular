@@ -1,7 +1,7 @@
 <div class="cart" *ngIf="cartItems.length !== 0">
   <div class="cart-items-container">
-    <app-cart-row (click)="navigateToItem(ci.code)" *ngFor="let ci of cartItems" [qty]="ci.qty"
-                  [item]="getItem(ci.code)" (onRemove)="loadAllCartItems(); calculateNetTotal()"></app-cart-row>
+    <app-cart-row (click)="navigateToItem(ci.item.code)" *ngFor="let ci of cartItems" [qty]="ci.qty"
+                  [item]="ci.item" (onRemove)="loadAllCartItems(); calculateNetTotal()"></app-cart-row>
   </div>
   <div class="checkout-container">
     <h2>Net Total: {{total|currency:'USD'}}</h2>

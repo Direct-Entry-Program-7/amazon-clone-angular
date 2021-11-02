@@ -20,7 +20,7 @@ export class ItemService {
   }
 
   getItem(code: string): Observable<Item> {
-    return this.http.get<Item>(`${this.ITEM_SERVICE_API}?code=${code}`);
+    return this.http.get<Item>(`${this.ITEM_SERVICE_API}?code=${code}`).pipe(map(convertToItem));
   }
 }
 
