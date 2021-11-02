@@ -8,7 +8,7 @@ import {ItemService} from "./item.service";
 })
 export class CartService {
 
-  private cartItems: Array<{code: string, qty: number}> = [];
+  private cartItems: Array<{item: Item, qty: number}> = [];
   private totalItems = new Subject<number>();
 
   constructor(private itemService: ItemService) {
@@ -16,7 +16,7 @@ export class CartService {
 
   updateCart(it: Item, toCart: number) {
 
-    const item = this.cartItems.find(i => i.code === it.code);
+    const item = this.cartItems.find(i => i.item === it);
 
     if (item){
       item.qty = toCart;
@@ -25,7 +25,7 @@ export class CartService {
         this.cartItems.splice(this.cartItems.indexOf(item), 1);
       }
     }else{
-      this.cartItems.push({code: it.code, qty: toCart});
+      this.cartItems.push({item: it, qty: toCart});
     }
     this.calculateTotalItems();
   }
@@ -42,17 +42,17 @@ export class CartService {
   }
 
   getQtyInCart(code: string): number{
-    const item = this.cartItems.find(i => i.code === code);
+    const item = this.cartItems.find(i => i.item.code === code);
 
     return item? item.qty: 0;
   }
 
-  getAllCartItems(): Array<{code: string, qty: number}>{
+  getAllCartItems(): Array<{item: Item, qty: number}>{
     return this.cartItems;
   }
 
   removeItemFromCart(code: string): void{
-    this.cartItems = this.cartItems.filter(item => item.code !== code);
+    this.cartItems = this.cartItems.filter(i => i.item.code !== code);
     this.calculateTotalItems();
   }
 

@@ -33,7 +33,7 @@ export class ItemComponent implements OnInit {
     const itemCode = this.activeRoute.snapshot.paramMap.get('code');
 
     if (itemCode){
-      this.itemService.getItem(itemCode).pipe().subscribe(item => {
+      this.itemService.getItem(itemCode).subscribe(item => {
         this.item = item;
         this.loadInCartQty();
       }, error => {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {CartService} from "../service/cart.service";
 import {ItemService} from "../service/item.service";
 import {Item} from "../dto/item";
