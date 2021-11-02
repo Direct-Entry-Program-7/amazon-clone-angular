@@ -12,7 +12,7 @@ export class ItemService {
   constructor(private http: HttpClient) { }
 
   getAllItems(): Observable<Array<Item>>{
-    return this.http.get<Array<Item>>('http://localhost:8080/items/');
+    return this.http.get<Array<Item>>('http://localhost:8080/amazon/items');
   }
 
   getItem(code: string): Item | null {
