@@ -1,1 +1,4 @@
 <app-cart-item *ngFor="let it of items" [item]="it"></app-cart-item>
+<div class="loader-container" *ngIf="items.length === 0" >
+  <div class="lds-ripple"><div></div><div></div></div>
+</div>
