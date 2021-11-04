@@ -32,6 +32,7 @@ export class CartService {
       this.cartItems.push({item: it, qty: toCart});
     }
     this.calculateTotalItems();
+    localStorage.setItem('cart-details', JSON.stringify(this.cartItems));
   }
 
   getTotalItemsInCart(): Subject<number> {
@@ -80,9 +81,15 @@ export class CartService {
     this.totalItems.next(totalItems);
   }
 
+  restorePreviousCartState(): void{
+    this.cartItems = JSON.parse(localStorage.getItem('cart-details')?? '[]');
+    this.calculateTotalItems();
+  }
+
   clearCart(): void{
     this.cartItems = [];
     this.calculateTotalItems();
+    localStorage.removeItem('cart-details');
   }
 }
 
