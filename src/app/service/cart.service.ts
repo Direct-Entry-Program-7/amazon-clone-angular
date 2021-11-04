@@ -65,6 +65,10 @@ export class CartService {
 
     return total;
   }
+
+  placeCart(){
+
+  }
 }
 
 

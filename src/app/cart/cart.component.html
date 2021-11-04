@@ -5,7 +5,7 @@
   </div>
   <div class="checkout-container">
     <h2>Net Total: {{total|currency:'USD'}}</h2>
-    <button>Checkout</button>
+    <button (click)="checkout()">Checkout</button>
   </div>
 </div>
 <div class="empty-cart" *ngIf="cartItems.length === 0">
