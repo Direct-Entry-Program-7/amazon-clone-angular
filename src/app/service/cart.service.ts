@@ -51,6 +51,12 @@ export class CartService {
   removeItemFromCart(code: string): void {
     this.cartItems = this.cartItems.filter(i => i.item.code !== code);
     this.calculateTotalItems();
+
+    if (this.cartItems.length === 0){
+      localStorage.removeItem('cart-details');
+    } else{
+      localStorage.setItem('cart-details', JSON.stringify(this.cartItems));
+    }
   }
 
   getNetTotal(): number {
