@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  baseAPI: 'http://225.1.25.3:8080'
 };

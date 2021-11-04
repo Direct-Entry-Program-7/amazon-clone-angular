@@ -3,13 +3,14 @@ import {Item} from "../dto/item";
 import {Observable, Subject} from "rxjs";
 import {OrderDetail} from "../dto/order-detail";
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  private readonly ORDER_SERVICE_API = 'http://localhost:8080/amazon/orders';
+  private readonly ORDER_SERVICE_API = `${environment.baseAPI}/orders`;
 
   private cartItems: Array<{ item: Item, qty: number }> = [];
   private totalItems = new Subject<number>();
