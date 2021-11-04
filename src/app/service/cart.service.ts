@@ -63,7 +63,13 @@ export class CartService {
     return total;
   }
 
-  placeCart(orderDetails: Array<OrderDetail>): Observable<void> {
+  placeCart(): Observable<void> {
+    const orderDetails: Array<OrderDetail> = [];
+
+    this.cartItems.forEach(ci => {
+      orderDetails.push(new OrderDetail(ci.item.code, ci.qty, ci.item.price));
+    });
+
     return this.http.post<void>(this.ORDER_SERVICE_API, orderDetails);
   }
 
@@ -72,6 +78,11 @@ export class CartService {
 
     this.cartItems.forEach(item => totalItems += item.qty);
     this.totalItems.next(totalItems);
+  }
+
+  clearCart(): void{
+    this.cartItems = [];
+    this.calculateTotalItems();
   }
 }
 
