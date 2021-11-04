@@ -10,7 +10,7 @@ import {map} from "rxjs/operators";
 })
 export class ItemService {
 
-  readonly ITEM_SERVICE_API = 'http://localhost:8080/amazon/items';
+  private readonly ITEM_SERVICE_API = 'http://localhost:8080/amazon/items';
 
   constructor(private http: HttpClient) { }
 

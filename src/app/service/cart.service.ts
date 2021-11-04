@@ -1,62 +1,59 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Item} from "../dto/item";
-import {Subject} from "rxjs";
+import {Observable, Subject} from "rxjs";
 import {ItemService} from "./item.service";
+import {OrderDetail} from "../dto/order-detail";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  private cartItems: Array<{item: Item, qty: number}> = [];
+  private readonly ORDER_SERVICE_API = 'http://localhost:8080/amazon/orders';
+
+  private cartItems: Array<{ item: Item, qty: number }> = [];
   private totalItems = new Subject<number>();
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
   updateCart(it: Item, toCart: number) {
 
     const item = this.cartItems.find(i => i.item.code === it.code);
 
-    if (item){
+    if (item) {
       item.qty = toCart;
 
-      if (item.qty === 0){
+      if (item.qty === 0) {
         this.cartItems.splice(this.cartItems.indexOf(item), 1);
       }
-    }else{
+    } else {
       this.cartItems.push({item: it, qty: toCart});
     }
     this.calculateTotalItems();
   }
 
-  private calculateTotalItems(){
-    let totalItems = 0;
-
-    this.cartItems.forEach(item => totalItems += item.qty);
-    this.totalItems.next(totalItems);
-  }
-
-  getTotalItemsInCart(): Subject<number>{
+  getTotalItemsInCart(): Subject<number> {
     return this.totalItems;
   }
 
-  getQtyInCart(code: string): number{
+  getQtyInCart(code: string): number {
     const item = this.cartItems.find(i => i.item.code === code);
 
-    return item? item.qty: 0;
+    return item ? item.qty : 0;
   }
 
-  getAllCartItems(): Array<{item: Item, qty: number}>{
+  getAllCartItems(): Array<{ item: Item, qty: number }> {
     return this.cartItems;
   }
 
-  removeItemFromCart(code: string): void{
+  removeItemFromCart(code: string): void {
     this.cartItems = this.cartItems.filter(i => i.item.code !== code);
     this.calculateTotalItems();
   }
 
-  getNetTotal(): number{
+  getNetTotal(): number {
     let total = 0;
 
     this.cartItems.forEach(ci => {
@@ -66,8 +63,15 @@ export class CartService {
     return total;
   }
 
-  placeCart(){
+  placeCart(orderDetails: Array<OrderDetail>): Observable<void> {
+    return this.http.post<void>(this.ORDER_SERVICE_API, orderDetails);
+  }
 
+  private calculateTotalItems() {
+    let totalItems = 0;
+
+    this.cartItems.forEach(item => totalItems += item.qty);
+    this.totalItems.next(totalItems);
   }
 }
 
