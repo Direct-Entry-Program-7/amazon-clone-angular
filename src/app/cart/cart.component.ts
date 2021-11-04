@@ -4,6 +4,7 @@ import {ItemService} from "../service/item.service";
 import {Item} from "../dto/item";
 import {Router} from "@angular/router";
 import {Observable} from "rxjs";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-cart',
@@ -14,10 +15,12 @@ export class CartComponent implements OnInit {
 
   total: number = 0;
   cartItems!: Array<{item: Item, qty: number}>;
+  onProgress = false;
 
   constructor(private cartService: CartService,
               public itemService: ItemService,
-              private router: Router) { }
+              private router: Router,
+              private toastrService: ToastrService) { }
 
   ngOnInit(): void {
     this.loadAllCartItems();
@@ -37,12 +40,21 @@ export class CartComponent implements OnInit {
   }
 
   checkout(): void {
+    this.onProgress = true;
     this.cartService.placeCart().subscribe(value => {
-      alert("Order has been placed");
+      this.onProgress = false;
+      this.toastrService.success("Order has been placed", "Success", {
+        positionClass: 'toast-bottom-right'
+      });
       this.cartService.clearCart();
       this.router.navigateByUrl('/home');
     }, error => {
-      console.log(error);
+      this.onProgress = false;
+      console.error(error);
+      this.toastrService.error("Failed to checkout. Try again!", "Error", {
+        positionClass: 'toast-bottom-right',
+        progressBar: true
+      });
     })
   }
 }

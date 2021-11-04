@@ -10,7 +10,7 @@ import {delay, map} from "rxjs/operators";
 })
 export class ItemService {
 
-  private readonly ITEM_SERVICE_API = 'http://localhost:8080/amazon/itemse';
+  private readonly ITEM_SERVICE_API = 'http://localhost:8080/amazon/items';
 
   constructor(private http: HttpClient) { }
 
