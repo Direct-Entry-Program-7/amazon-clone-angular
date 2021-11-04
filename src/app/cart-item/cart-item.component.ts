@@ -1,7 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Item} from "../dto/item";
 import {CartService} from "../service/cart.service";
-import {ItemService} from "../service/item.service";
 import {Router} from "@angular/router";
 
 @Component({

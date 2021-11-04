@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Item} from "../dto/item";
 import {Observable, Subject} from "rxjs";
-import {ItemService} from "./item.service";
 import {OrderDetail} from "../dto/order-detail";
 import {HttpClient} from "@angular/common/http";
 

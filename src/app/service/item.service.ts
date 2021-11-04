@@ -1,9 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {Item} from "../dto/item";
-import {DUMMY_DATA} from "../dummy-data";
 import {HttpClient} from "@angular/common/http";
-import {delay, map} from "rxjs/operators";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'

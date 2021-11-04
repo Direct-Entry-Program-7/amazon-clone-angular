@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CartService} from "../service/cart.service";
 import {ItemService} from "../service/item.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Item} from "../dto/item";
-import {DUMMY_DATA} from "../dummy-data";
-import {delay} from "rxjs/operators";
 
 @Component({
   selector: 'app-item',

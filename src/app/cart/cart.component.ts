@@ -1,9 +1,8 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CartService} from "../service/cart.service";
 import {ItemService} from "../service/item.service";
 import {Item} from "../dto/item";
 import {Router} from "@angular/router";
-import {Observable} from "rxjs";
 import {ToastrService} from "ngx-toastr";
 
 @Component({

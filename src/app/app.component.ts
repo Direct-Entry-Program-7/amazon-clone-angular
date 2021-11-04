@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import {DUMMY_DATA} from "./dummy-data";
-import {Item} from "./dto/item";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
