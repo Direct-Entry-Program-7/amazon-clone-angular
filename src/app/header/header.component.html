@@ -3,10 +3,16 @@
   <div class="logo-container">
     <div routerLink="/home" class="logo"></div>
   </div>
-  <div class="cart-container" routerLink="/cart">
-    <div class="cart-icon">
-      <span>{{totalItemsInCart}}</span>
+  <div class="options-wrapper">
+    <div class="user-container">
+      <small>Hello, Sign in</small><br>
+      <b>Account & Lists <span></span></b>
     </div>
-    <small>Cart</small>
+    <div class="cart-container" routerLink="/cart">
+      <div class="cart-icon">
+        <span>{{totalItemsInCart}}</span>
+      </div>
+      <small>Cart</small>
+    </div>
   </div>
 </header>
