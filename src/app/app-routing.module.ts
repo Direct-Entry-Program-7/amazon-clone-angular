@@ -3,28 +3,50 @@ import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 import {ItemComponent} from "./item/item.component";
 import {CartComponent} from "./cart/cart.component";
+import {SignInComponent} from "./sign-in/sign-in.component";
+import {SignUpComponent} from "./sign-up/sign-up.component";
+import {MainComponent} from "./main/main.component";
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent
+    path: 'sign-in',
+    component: SignInComponent
   },
   {
-    path: 'items/:code',
-    component: ItemComponent
+    path: 'sign-up',
+    component: SignUpComponent
   },
   {
-    path: 'cart',
-    component: CartComponent
+    path: 'main',
+    component: MainComponent,
+    children: [
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'items/:code',
+        component: ItemComponent
+      },
+      {
+        path: 'cart',
+        component: CartComponent
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: '/main/home'
+      }
+    ]
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/home'
+    redirectTo: '/main/home'
   },
   {
     path: '**',
-    redirectTo: '/home'
+    redirectTo: '/main/home'
   }
 ];
 

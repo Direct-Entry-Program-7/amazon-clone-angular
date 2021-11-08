@@ -15,6 +15,9 @@ import {NgProgressModule} from "ngx-progressbar";
 import {NgProgressHttpModule} from "ngx-progressbar/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import {ToastrModule} from "ngx-toastr";
     ItemComponent,
     HomeComponent,
     CartComponent,
-    CartRowComponent
+    CartRowComponent,
+    SignInComponent,
+    SignUpComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
