@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Title} from "@angular/platform-browser";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-sign-up',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title, private toastrService: ToastrService) { }
 
   ngOnInit(): void {
+    this.toastrService.clear();
+    this.titleService.setTitle("Amazon Registration");
   }
 
 }

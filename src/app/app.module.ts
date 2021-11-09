@@ -18,6 +18,7 @@ import {ToastrModule} from "ngx-toastr";
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { MainComponent } from './main/main.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MainComponent } from './main/main.component';
     CartRowComponent,
     SignInComponent,
     SignUpComponent,
-    MainComponent
+    MainComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
