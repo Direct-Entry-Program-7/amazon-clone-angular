@@ -1,14 +1,15 @@
 <a href="#" routerLink="/main/home">
   <div class="amazon-logo"></div>
 </a>
-<form class="sign-up-container">
+<ng-container *ngIf="!step2">
+<form  class="sign-in-container">
   <h2>Sign-In</h2>
   <div class="form-group">
-    <label for="">Email or mobile phone number</label>
-    <input type="text">
+    <label for="txt-email">Email or mobile phone number</label>
+    <input type="text" id="txt-email">
   </div>
   <div class="form-group">
-    <button>Continue</button>
+    <button (click)="step2 = true">Continue</button>
   </div>
   <p>
     By creating an account, you agree to Amazon's <a
@@ -30,5 +31,19 @@
 <div class="divider-break">
   <span>New to Amazon?</span>
 </div>
-<button id="btn-create-account" type="button">Create your Amazon account</button>
+<button routerLink="/sign-up"  id="btn-create-account" type="button">Create your Amazon account</button>
+</ng-container>
+<form class="sign-in-container" *ngIf="step2">
+  <h2>Sign-In</h2>
+  <div class="email">
+    <label>suranga@ijse.lk <a href="javascript:void(0)" (click)="step2 =false">Change</a></label>
+  </div>
+  <div class="form-group">
+    <label for="txt-password">Password</label>
+    <input id="txt-password" type="password">
+  </div>
+  <div class="form-group">
+    <button>Sign-In</button>
+  </div>
+</form>
 <app-footer></app-footer>

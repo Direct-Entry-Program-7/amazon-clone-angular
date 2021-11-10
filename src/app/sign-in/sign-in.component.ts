@@ -9,6 +9,7 @@ import {ToastrService} from "ngx-toastr";
 export class SignInComponent implements OnInit {
 
   needHelp = false;
+  step2 = false;
 
   constructor(private toastrService: ToastrService) { }
 
